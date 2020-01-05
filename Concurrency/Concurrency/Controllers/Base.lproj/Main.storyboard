@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1eo-bi-9u4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1eo-bi-9u4">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,10 +20,10 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ppw-Os-F6x">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="144" width="414" height="718"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="countryCell" rowHeight="128" id="zod-8k-hI4">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="countryCell" rowHeight="128" id="zod-8k-hI4" customClass="ConcurrencyTableViewCell" customModule="Concurrency" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="128"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zod-8k-hI4" id="NAF-Ci-Ogf">
@@ -34,8 +34,8 @@
                                                     <rect key="frame" x="0.0" y="30" width="184" height="98"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbu-1h-pIB">
-                                                    <rect key="frame" x="192" y="30" width="202" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="192" y="30" width="202" height="23"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -68,39 +68,42 @@
                                                 <constraint firstItem="2JX-9b-r9p" firstAttribute="height" secondItem="NAF-Ci-Ogf" secondAttribute="height" multiplier="0.765625" id="yxX-XY-Aax"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="concurrencyImage" destination="2JX-9b-r9p" id="nFq-Tb-BCi"/>
+                                            <outlet property="countryCap" destination="pM5-5h-wTB" id="6mS-d1-83A"/>
+                                            <outlet property="countryName" destination="lbu-1h-pIB" id="xjb-Gm-pkP"/>
+                                            <outlet property="countryPopulation" destination="swS-M7-vml" id="YOo-YJ-9Kb"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ppw-Os-F6x" secondAttribute="bottom" id="2C4-Hg-5hC"/>
+                            <constraint firstItem="Ppw-Os-F6x" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="2EC-ln-bcY"/>
                             <constraint firstItem="Jnd-Ob-QEk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="6u4-Lf-m6m"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ppw-Os-F6x" secondAttribute="trailing" id="FTz-nw-H3J"/>
-                            <constraint firstItem="Ppw-Os-F6x" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="RRU-Sp-ggJ"/>
-                            <constraint firstItem="Ppw-Os-F6x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="U4b-jv-T6M"/>
+                            <constraint firstItem="Ppw-Os-F6x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8zU-ed-bLA"/>
                             <constraint firstItem="Jnd-Ob-QEk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="r6J-Ox-Hi0"/>
+                            <constraint firstItem="Ppw-Os-F6x" firstAttribute="top" secondItem="Jnd-Ob-QEk" secondAttribute="bottom" symbolic="YES" id="rXG-hi-st8"/>
                             <constraint firstItem="Jnd-Ob-QEk" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tP4-ty-Soe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ppw-Os-F6x" secondAttribute="bottom" id="u7o-C6-3QR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="2MB-dA-jEG"/>
                     <connections>
-                        <outlet property="countryCapitalLabel" destination="zod-8k-hI4" id="Iaa-ve-S7E"/>
-                        <outlet property="countryNameLabel" destination="zod-8k-hI4" id="Ddg-lM-evI"/>
-                        <outlet property="countryPopulationLabel" destination="swS-M7-vml" id="oef-sU-b0X"/>
+                        <outlet property="concurrencySearch" destination="Jnd-Ob-QEk" id="pZs-ug-xZe"/>
                         <outlet property="countryTableView" destination="Ppw-Os-F6x" id="Jlj-iZ-4ec"/>
-                        <outlet property="flagImage" destination="zod-8k-hI4" id="7JE-uQ-SUL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="126.5625"/>
         </scene>
-        <!--View Controller-->
+        <!--Detailed View Controller-->
         <scene sceneID="QCT-3q-CM3">
             <objects>
-                <viewController id="Fr5-CU-8qD" sceneMemberID="viewController">
+                <viewController id="Fr5-CU-8qD" customClass="DetailedViewController" customModule="Concurrency" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P03-Ce-JnQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -142,6 +145,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BvE-vC-OGi"/>
                     </view>
+                    <connections>
+                        <outlet property="capitalOutlet" destination="i02-nB-t8P" id="Kcp-DR-MwR"/>
+                        <outlet property="countryImage" destination="yt4-4V-VKd" id="F9x-od-VY4"/>
+                        <outlet property="nameOutlet" destination="tmq-vH-jtW" id="Q2u-us-3is"/>
+                        <outlet property="populationOutlet" destination="bGf-Mj-CRw" id="xSX-29-edU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nfC-cX-th3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
