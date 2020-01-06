@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
+    //TODO: Fix errors and pass data, make sure everything is working
     @IBOutlet weak var concurrencySearch: UISearchBar!
     @IBOutlet weak var countryTableView: UITableView!
     
@@ -62,16 +62,15 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "countryCell", for: indexPath) as? ConcurrencyTableViewCell else { fatalError("Could not load cells")}
-        cell.countryName.text = concurrencyRef[indexPath.row].name
-        cell.countryCap.text = concurrencyRef[indexPath.row].capital
-        cell.countryPopulation.text = concurrencyRef[indexPath.row].population.description
-        cell.concurrencyImage.image = concurrencyRef[indexPath.row].countryImage
+        cell.setUpCell(eachCell: concurrencyRef[indexPath.row])
         return cell
     }
 }
 
 extension ViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
 }
 
 extension ViewController: UISearchBarDelegate {

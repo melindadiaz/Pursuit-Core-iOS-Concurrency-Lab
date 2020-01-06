@@ -40,11 +40,11 @@ class DetailedViewController: UIViewController {
             case .failure(let appError):
                 DispatchQueue.main.async {
                     self?.showAlert(title: "Image Error", message: "No image available \(appError)")
-                    //self?.countryData.countryImage = UIImage(named: "i-cant-see-shit-captain")
+                    self?.countryImage.image = UIImage(named: "i-cant-see-shit-captain")
                 }
             case .success(let imageURL):
                 DispatchQueue.main.async {
-                    self?.countryData.countryImage = imageURL
+                    self?.countryImage.image = imageURL
                 }
             }
         }
